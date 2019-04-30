@@ -1,0 +1,32 @@
+{
+  "name": "iridium-palomino",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-brands-svg-icons": "^5.8.1",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
+    "@gridsome/remark-prismjs": "^0.0.5",
+    "@gridsome/source-filesystem": "^0.3.0",
+    "@gridsome/transformer-remark": "^0.2.1",
+    "buefy": "^0.7.5",
+    "gridsome": "^0.5.0",
+    "gridsome-plugin-algolia": "^1.1.5",
+    "gridsome-plugin-remark-shiki": "^0.3.0",
+    "gridsome-plugin-remark-twitter": "^0.1.2",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-vue": "^5.2.2"
+  }
+}
