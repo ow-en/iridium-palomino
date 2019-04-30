@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <div class="columns">
-      <div class="column is-two-thirds">
+      <div class="column is-one-third is-multiline">
         <section class="hero is-fluid is-hidden-touch">
           <div class="hero-body">
             <div class="container is-fluid text-hero">
@@ -24,8 +24,12 @@
           </div>
         </section>
       </div>
+      <div class="column is-12 carousel-wrapper">
+        <h2 class="title is-2">Recent Posts</h2>
+        <carousel id="carousel" :posts="$page.recentPosts.edges" />
+      </div>
     </div>
-    <h2 class="title is-3">Recent Posts</h2>
+    <!-- <h2 class="title is-3">Recent Posts</h2>
     <div id="recent-posts" class="columns is-multiline is-centered">
       <div
         class="column is-half"
@@ -40,7 +44,7 @@
           />
         </g-link>
       </div>
-    </div>
+    </div> -->
   </Layout>
 </template>
 
@@ -61,8 +65,12 @@ query Posts {
 
 <script>
 // import Search from "@/components/Search";
+import Carousel from "@/components/Carousel.vue";
 
 export default {
+  components: {
+    Carousel
+  },
   metaInfo: {
     title: "Welcome to my website",
     meta: [
@@ -86,6 +94,10 @@ export default {
 </script>
 
 <style>
+.carousel-wrapper {
+  margin-top: 140px;
+  margin-left: 40px;
+}
 .text-wrapper {
   opacity: 0.3;
 }

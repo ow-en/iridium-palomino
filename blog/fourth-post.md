@@ -1,5 +1,5 @@
 ---
-slug: third-post
+slug: fourth-post
 title: Test Post C !
 date: 2019-02-23 20:00:00
 author: owen caulfield
