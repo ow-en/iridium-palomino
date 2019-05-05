@@ -24,6 +24,6 @@ export default function (Vue, { router, head, isClient }) {
 
   head.link.push({
     rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons',
+    href: 'https://use.typekit.net/lep8qlf.css',
   });
 }

@@ -77,7 +77,7 @@ h2,
 h3,
 h5,
 h6 {
-  font-family: scto-grotesk-a-medium, sans-serif;
+  font-family: brandon-grotesque, sans-serif;
   font-weight: 400;
   font-style: normal;
   text-transform: uppercase;
@@ -91,7 +91,7 @@ h1 {
 
 h4 {
   font-size: 30px !important;
-  font-family: scto-grotesk-a-medium, sans-serif;
+  font-family: brandon-grotesque, sans-serif;
   font-weight: 600;
   font-style: italic;
   line-height: 34px !important;

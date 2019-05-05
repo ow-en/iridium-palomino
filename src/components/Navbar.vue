@@ -23,10 +23,10 @@
     </div>
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <g-link class="navbar-item" :to="{ name: 'home' }">HOME</g-link>
-        <g-link class="navbar-item" :to="{ name: 'blog' }">BLOG</g-link>
-        <g-link class="navbar-item" :to="{ name: 'contact' }">CONTACT</g-link>
-        <g-link class="navbar-item" :to="{ name: 'about' }">ABOUT</g-link>
+        <g-link class="navbar-item" :to="{ name: 'home' }">Home</g-link>
+        <g-link class="navbar-item" :to="{ name: 'blog' }">Blog</g-link>
+        <g-link class="navbar-item" :to="{ name: 'contact' }">Contact</g-link>
+        <g-link class="navbar-item" :to="{ name: 'about' }">About</g-link>
       </div>
     </div>
     <social-links />
@@ -61,18 +61,20 @@ export default {
 <style>
 .brand {
   margin-left: 5px;
-  font-family: scto-grotesk-a-medium, sans-serif;
+  font-family: acumin-pro, sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 .navbar-item {
-  font-family: scto-grotesk-a-medium, sans-serif;
-  font-weight: 500;
+  font-family: brandon-grotesque, sans-serif;
+  font-weight: 900;
   font-style: normal;
+  letter-spacing: 1.75px;
   font-size: 1.25rem !important;
   line-height: 2rem !important;
-  color: #35477d !important;
+  text-transform: uppercase;
+  color: #6c5b7b !important;
 }
 
 @media screen and (max-width: 900px) {

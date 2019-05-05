@@ -2,29 +2,55 @@
   <Layout>
     <div class="columns">
       <div class="column is-one-third is-multiline">
-        <section class="hero is-fluid is-hidden-touch">
-          <div class="hero-body">
-            <div class="container is-fluid text-hero">
-              caulfield°
-              <div class="hero-lower-text">
-                .dev
-              </div>
-              <div class="text-wrapper">
-                <div class="hero-lower-text">
-                  a blog
-                </div>
-                <div class="hero-lower-text">
+        <section class="hero is-fluid">
+          <div class="hero-body text-hero">
+            <p class="text">
+              <span class="text__first">
+                <span class="text__word lower-text">
+                  caulfield°
+                </span>
+                <span class="text__first-bg"></span>
+              </span>
+              <br />
+              <span class="text__second">
+                <span class="text__word lower-text text-turquoise">
+                  .dev
+                </span>
+                <span class="text__second-bg"> </span>
+              </span>
+              <br />
+              <span class="text__third">
+                <span class="text__word lower-text">
+                  a
+                </span>
+                <span class="text__third-bg"> </span>
+              </span>
+              <br />
+              <span class="text__fourth">
+                <span class="text__word lower-text">
+                  blog
+                </span>
+                <span class="text__fourth-bg"> </span>
+              </span>
+              <br />
+              <span class="text__fifth">
+                <span class="text__word lower-text">
                   about
-                </div>
-                <div class="hero-lower-text">
+                </span>
+                <span class="text__fifth-bg"> </span>
+              </span>
+              <br />
+              <span class="text__sixth">
+                <span class="text__word lower-text">
                   programming
-                </div>
-              </div>
-            </div>
+                </span>
+                <span class="text__sixth-bg"> </span>
+              </span>
+            </p>
           </div>
         </section>
       </div>
-      <div class="column is-12 carousel-wrapper"></div>
+      <div class="column is-two-thirds"></div>
     </div>
     <h2 class="title is-3">Recent Posts</h2>
     <div id="recent-posts" class="columns is-multiline is-centered">
@@ -62,6 +88,7 @@ query Posts {
 
 <script>
 // import Search from "@/components/Search";
+import { TweenMax, TimelineLite } from "gsap";
 
 export default {
   components: {},
@@ -83,31 +110,63 @@ export default {
       },
       { name: "twitter:creator", content: "@therealdanvega" }
     ]
+  },
+  methods: {
+    animateText() {
+      console.log("animate");
+      var tl = new TimelineLite({ delay: 1 }),
+        firstBg = document.querySelectorAll(".text__first-bg"),
+        secBg = document.querySelectorAll(".text__second-bg"),
+        thirdBg = document.querySelectorAll(".text__third-bg"),
+        fourthBg = document.querySelectorAll(".text__fourth-bg"),
+        fifthBg = document.querySelectorAll(".text__fifth-bg"),
+        sixthBg = document.querySelectorAll(".text__sixth-bg"),
+        word = document.querySelectorAll(".text__word");
+
+      tl.to(firstBg, 0.2, { scaleX: 1 })
+        .to(secBg, 0.2, { scaleX: 1 })
+        .to(thirdBg, 0.2, { scaleX: 1 })
+        .to(fourthBg, 0.2, { scaleX: 1 })
+        .to(fifthBg, 0.2, { scaleX: 1 })
+        .to(sixthBg, 0.2, { scaleX: 1 })
+        .to(word, 0.1, { opacity: 1 }, "-=0.1")
+
+        .to(firstBg, 0.2, { scaleX: 0 })
+        .to(secBg, 0.2, { scaleX: 0 })
+        .to(thirdBg, 0.2, { scaleX: 0 })
+        .to(fourthBg, 0.2, { scaleX: 0 })
+        .to(fifthBg, 0.2, { scaleX: 0 })
+        .to(sixthBg, 0.2, { scaleX: 0 });
+    }
+  },
+  mounted() {
+    this.animateText();
   }
 };
 </script>
 
 <style>
-.carousel-wrapper {
-  margin-top: 140px;
-  margin-left: 40px;
-}
-.text-wrapper {
-  opacity: 0.3;
-}
 .home-links a {
   margin-right: 1rem;
 }
 
-.post-box {
-  background: #fafafa;
+body,
+html {
+  height: 100%;
 }
 
-.bg-gradient {
-  background: linear-gradient(45deg, #cc1d5e, #162838);
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-weight: 900;
+  color: #353535;
+  position: relative;
 }
 
-.text-hero {
+.text {
+  display: inline-block;
   font-size: 9rem;
   line-height: 2rem;
   width: 100% !important;
@@ -116,17 +175,66 @@ export default {
   font-weight: 500 !important;
   text-transform: uppercase;
   color: #6c5b7b;
-  margin-bottom: 40px;
-  margin-top: 40px;
 }
 
-.hero-lower-text {
-  margin-top: 120px;
-  margin-left: 0px;
+.text__first,
+.text__second,
+.text__third,
+.text__fourth,
+.text__fifth,
+.text__sixth {
+  position: relative;
+  float: left;
 }
 
-.hero {
-  align-items: center !important;
-  z-index: 0;
+.text__word {
+  opacity: 0;
+}
+
+.lower-text {
+  margin-top: 5rem;
+  float: left;
+}
+
+.text__first-bg,
+.text__second-bg,
+.text__third-bg,
+.text__fourth-bg,
+.text__fifth-bg,
+.text__sixth-bg {
+  display: block;
+  width: 110%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  transform-origin: left;
+  transform: scaleX(0);
+  float: left;
+  margin-top: 2rem;
+}
+
+.text__first-bg,
+.text__second-bg,
+.text__third-bg,
+.text__fourth-bg,
+.text__fifth-bg,
+.text__sixth-bg {
+  background-color: #c06c84;
+  opacity: 0.3;
+}
+
+.text__first,
+.text__second,
+.text__third,
+.text__fourth,
+.text__fifth,
+.text__sixth {
+  margin-top: 1.2vmin;
+}
+
+.text-turquoise {
+  color: #c06c84;
 }
 </style>
